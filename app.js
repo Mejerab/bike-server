@@ -63,10 +63,6 @@ app.get('/datas', (req, res) => {
 
     // Execute the query
     db.query(sql, values, (err, results) => {
-        if (err) {
-            console.error(err);
-            return res.status(500).json({ error: 'Database error' });
-        }
         res.json(results);
     });
 });
